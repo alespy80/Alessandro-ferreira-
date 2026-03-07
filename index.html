@@ -10,34 +10,10 @@
 
 <style>
 
-{
+*{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-  .card {
-max-width: 420px;
-margin: auto;
-padding: 22px;
-line-height: 1.6;
-}
-
-.card ul {
-padding-left: 18px;
-}
-
-.card li {
-margin-bottom: 14px;
-font-size: 16px;
-}
-
-.card h3 {
-margin-bottom: 4px;
-}
-
-.card p {
-margin-top: 2px;
-opacity: 0.9;
 }
 
 body{
@@ -77,12 +53,15 @@ padding:40px;
 font-size:44px;
 color:#00e5ff;
 margin-bottom:20px;
+max-width:900px;
+line-height:1.2;
 }
 
 .hero p{
 font-size:20px;
-max-width:700px;
+max-width:650px;
 line-height:1.6;
+margin:auto;
 }
 
 /* BOTÃO */
@@ -97,12 +76,14 @@ color:white;
 font-size:20px;
 text-decoration:none;
 box-shadow:0 0 25px #00e5ff;
+font-weight:bold;
+letter-spacing:0.5px;
 transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 40px #00e5ff;
+transform:scale(1.08);
+box-shadow:0 0 60px #00e5ff;
 }
 
 /* SEÇÕES */
@@ -117,6 +98,12 @@ text-align:center;
 .section h2{
 color:#00e5ff;
 margin-bottom:20px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.3;
+font-size:32px;
+letter-spacing:1px;
 }
 
 .section p{
@@ -124,12 +111,15 @@ font-size:18px;
 line-height:1.7;
 }
 
+/* LISTAS */
+
 ul{
 text-align:left;
-max-width:600px;
+max-width:500px;
 margin:30px auto;
 font-size:18px;
 line-height:1.8;
+padding-left:20px;
 }
 
 /* CARD GLASS */
@@ -141,6 +131,21 @@ backdrop-filter:blur(15px);
 border-radius:20px;
 padding:30px;
 margin-top:40px;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.7;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 50px rgba(0,229,255,0.25);
+}
+
+.card li{
+margin-bottom:14px;
+font-size:16px;
 }
 
 /* DIVISOR */
@@ -184,7 +189,7 @@ font-size:16px;
 
 <section class="hero">
 
-<h1>TREINAMENTO DE ALTO NÍVEL PARA QUEM LEVA RESULTADO A SÉRIO.</h1>
+<h1>TREINAMENTO DE ALTO NÍVEL PARA QUEM LEVA RESULTADO A SÉRIO</h1>
 
 <p>
 Método exclusivo, acompanhamento estratégico e evolução contínua
@@ -201,7 +206,7 @@ Solicitar Avaliação Estratégica
 
 <section class="section">
 
-<h2>NÃO ENTREGO TREINOS GENÉRICOS.</h2>
+<h2>NÃO ENTREGO TREINOS GENÉRICOS</h2>
 
 <p>Desenvolvo estratégias precisas.</p>
 
@@ -222,8 +227,8 @@ Solicitar Avaliação Estratégica
 
 <section class="section">
 
-<h2>MEU TRABALHO É CONSTRUIR RESULTADO.  
-NÃO ESPERAR QUE ELE ACONTEÇA.</h2>
+<h2>MEU TRABALHO É CONSTRUIR RESULTADO
+NÃO ESPERAR QUE ELE ACONTEÇA</h2>
 
 </section>
 
@@ -231,7 +236,7 @@ NÃO ESPERAR QUE ELE ACONTEÇA.</h2>
 
 <section class="section">
 
-<h2>SISTEMA ESTRUTURADO EM 4 PILARES</h2>
+<h2>SISTEMA BASEADO EM 4 PILARES</h2>
 
 <div class="card">
 
@@ -239,29 +244,29 @@ NÃO ESPERAR QUE ELE ACONTEÇA.</h2>
 
 <li>
 <b>Avaliação Física Estratégica</b><br>
-Análise corporal, postura, histórico e objetivos.
+Análise corporal, postura e histórico de treino.
 </li>
 
 <li>
 <b>Planejamento Individualizado</b><br>
-Treino estruturado com progressão técnica
+Treino estruturado com progressão técnica.
 </li>
 
 <li>
 <b>Ajustes Semanais</b><br>
-Acompanhamento contínuo para evolução constante.
+Acompanhamento contínuo da evolução.
 </li>
 
 <li>
 <b>Suporte Direto</b><br>
-Orientação próxima para execução correta.
+Orientação para execução correta.
 </li>
 
 </ul>
 
 </div>
 
-<p><b>É estratégia aplicada com consistência.</b></p>
+<p><b>Estratégia aplicada com consistência.</b></p>
 
 <a class="btn" href="https://alespy80.github.io/evo360-diagnostico/">
 Solicitar Avaliação Estratégica
@@ -276,16 +281,20 @@ Solicitar Avaliação Estratégica
 <h2>PARA QUEM É?</h2>
 
 <div class="card">
+
 <ul>
 
 <li>✅ Melhorar saúde e qualidade de vida</li>
-<li>💪 Evolução física e condicionamento</li>
+<li>💪 Evoluir fisicamente e ganhar condicionamento</li>
 <li>🚶‍♂️ Sair do sedentarismo com segurança</li>
-<li>📈 Evoluir e melhorar o desempenho</li>
+<li>📈 Melhorar desempenho no treino</li>
 <li>🧓 Mais disposição em qualquer idade</li>
 <li>🎯 Treinar com acompanhamento profissional</li>
+
 </ul>
+
 </div>
+
 </section>
 
 <div class="divider"></div>
@@ -300,7 +309,7 @@ Solicitar Avaliação Estratégica
 
 <li>Treinos 100% personalizados</li>
 <li>Correção técnica detalhada</li>
-<li>Estratégias para acelerar resultado</li>
+<li>Estratégias para acelerar resultados</li>
 <li>Orientação alimentar prática</li>
 <li>Avaliações e evolução periódica</li>
 
@@ -316,7 +325,7 @@ Solicitar Avaliação Estratégica
 
 <section class="section">
 
-<h2>SEU PRÓXIMO NÍVEL COMEÇA COM UMA DECISÃO.</h2>
+<h2>SEU PRÓXIMO NÍVEL COMEÇA COM UMA DECISÃO</h2>
 
 <p>
 Você pode continuar treinando sozinho…<br>
@@ -345,4 +354,4 @@ Agendar Avaliação Estratégica Agora<br>
 <a class="whatsapp" href="https://wa.me/5521979259432">🎯</a>
 
 </body>
-</html>
+  </html>
