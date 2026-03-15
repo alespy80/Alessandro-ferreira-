@@ -37,6 +37,27 @@ filter:blur(120px);
 z-index:-1;
 }
 
+/* MENU */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px;
+display:flex;
+justify-content:center;
+background:rgba(0,0,0,0.2);
+backdrop-filter:blur(10px);
+z-index:10;
+}
+
+nav span{
+color:#00e5ff;
+font-weight:bold;
+font-size:18px;
+letter-spacing:1px;
+}
+
 /* HERO */
 
 .hero{
@@ -50,7 +71,7 @@ padding:40px;
 }
 
 .hero h1{
-font-size:44px;
+font-size:48px;
 color:#00e5ff;
 margin-bottom:20px;
 max-width:900px;
@@ -61,7 +82,7 @@ line-height:1.2;
 font-size:20px;
 max-width:650px;
 line-height:1.6;
-margin:auto;
+opacity:0.9;
 }
 
 /* BOTÃO */
@@ -77,12 +98,11 @@ font-size:20px;
 text-decoration:none;
 box-shadow:0 0 25px #00e5ff;
 font-weight:bold;
-letter-spacing:0.5px;
 transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:scale(1.07);
 box-shadow:0 0 60px #00e5ff;
 }
 
@@ -91,50 +111,42 @@ box-shadow:0 0 60px #00e5ff;
 .section{
 max-width:900px;
 margin:auto;
-padding:80px 20px;
+padding:90px 20px;
 text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .section h2{
 color:#00e5ff;
 margin-bottom:20px;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-line-height:1.3;
 font-size:32px;
-letter-spacing:1px;
 }
 
 .section p{
 font-size:18px;
 line-height:1.7;
+opacity:0.9;
 }
 
-/* LISTAS */
-
-ul{
-text-align:left;
-max-width:500px;
-margin:30px auto;
-font-size:18px;
-line-height:1.8;
-padding-left:20px;
-}
-
-/* CARD GLASS */
+/* CARDS */
 
 .card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.1);
 backdrop-filter:blur(15px);
 border-radius:20px;
-padding:30px;
+padding:35px;
 margin-top:40px;
-max-width:500px;
+max-width:520px;
 margin-left:auto;
 margin-right:auto;
-line-height:1.7;
 transition:0.4s;
 }
 
@@ -143,9 +155,48 @@ transform:translateY(-8px);
 box-shadow:0 15px 50px rgba(0,229,255,0.25);
 }
 
-.card li{
+/* LISTAS */
+
+ul{
+text-align:left;
+max-width:520px;
+margin:30px auto;
+font-size:18px;
+line-height:1.8;
+list-style:none;
+}
+
+ul li{
 margin-bottom:14px;
+}
+
+ul li::before{
+content:"✔ ";
+color:#00e5ff;
+font-weight:bold;
+}
+
+/* INDICADORES */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.stat{
+font-size:34px;
+font-weight:bold;
+color:#00e5ff;
+}
+
+.stat span{
+display:block;
 font-size:16px;
+color:white;
+margin-top:5px;
 }
 
 /* DIVISOR */
@@ -153,8 +204,8 @@ font-size:16px;
 .divider{
 height:2px;
 background:#00e5ff;
-opacity:0.3;
-margin:70px auto;
+opacity:0.25;
+margin:80px auto;
 width:60%;
 }
 
@@ -166,19 +217,23 @@ bottom:25px;
 right:25px;
 background:#25d366;
 color:white;
-font-size:24px;
-padding:16px;
+font-size:26px;
+padding:16px 18px;
 border-radius:50%;
 text-decoration:none;
-box-shadow:0 0 20px #25d366;
+box-shadow:0 0 25px #25d366;
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:60px 20px;
+padding:70px 20px;
 font-size:16px;
+}
+
+footer strong{
+color:#00e5ff;
 }
 
 </style>
@@ -187,17 +242,21 @@ font-size:16px;
 
 <body>
 
+<nav>
+<span>Alessandro Ferreira | Personal Trainer</span>
+</nav>
+
 <section class="hero">
 
-<h1>TREINAMENTO DE ALTO NÍVEL PARA QUEM LEVA RESULTADO A SÉRIO</h1>
+<h1>Treinamento Estratégico para Evolução Física Real</h1>
 
 <p>
-Método exclusivo, acompanhamento estratégico e evolução contínua
-para homens e mulheres que não aceitam resultados medianos.
+Consultoria personalizada focada em saúde,
+condicionamento físico e evolução corporal.
 </p>
 
 <a class="btn" href="https://alespy80.github.io/evo360-diagnostico/">
-Solicitar Avaliação Estratégica
+Solicitar Avaliação Física
 </a>
 
 </section>
@@ -206,152 +265,141 @@ Solicitar Avaliação Estratégica
 
 <section class="section">
 
-<h2>NÃO ENTREGO TREINOS GENÉRICOS</h2>
-
-<p>Desenvolvo estratégias precisas.</p>
-
-<div class="card">
-
-<ul>
-<li>Treino pensado para progressão real</li>
-<li>Evolução física consistente</li>
-<li>Respeito à lógica fisiológica</li>
-<li>Aplicação do sistema neuromuscular</li>
-</ul>
-
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>MEU TRABALHO É CONSTRUIR RESULTADO
-NÃO ESPERAR QUE ELE ACONTEÇA</h2>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>SISTEMA BASEADO EM 4 PILARES</h2>
-
-<div class="card">
-
-<ul>
-
-<li>
-<b>Avaliação Física Estratégica</b><br>
-Análise corporal, postura e histórico de treino.
-</li>
-
-<li>
-<b>Planejamento Individualizado</b><br>
-Treino estruturado com progressão técnica.
-</li>
-
-<li>
-<b>Ajustes Semanais</b><br>
-Acompanhamento contínuo da evolução.
-</li>
-
-<li>
-<b>Suporte Direto</b><br>
-Orientação para execução correta.
-</li>
-
-</ul>
-
-</div>
-
-<p><b>Estratégia aplicada com consistência.</b></p>
-
-<a class="btn" href="https://alespy80.github.io/evo360-diagnostico/">
-Solicitar Avaliação Estratégica
-</a>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>PARA QUEM É?</h2>
-
-<div class="card">
-
-<ul>
-
-<li>✅ Melhorar saúde e qualidade de vida</li>
-<li>💪 Evoluir fisicamente e ganhar condicionamento</li>
-<li>🚶‍♂️ Sair do sedentarismo com segurança</li>
-<li>📈 Melhorar desempenho no treino</li>
-<li>🧓 Mais disposição em qualquer idade</li>
-<li>🎯 Treinar com acompanhamento profissional</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>DIFERENCIAIS EXCLUSIVOS</h2>
-
-<div class="card">
-
-<ul>
-
-<li>Treinos 100% personalizados</li>
-<li>Correção técnica detalhada</li>
-<li>Estratégias para acelerar resultados</li>
-<li>Orientação alimentar prática</li>
-<li>Avaliações e evolução periódica</li>
-
-</ul>
-
-</div>
-
-<p><b>AQUI CADA DETALHE É PLANEJADO.</b></p>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>SEU PRÓXIMO NÍVEL COMEÇA COM UMA DECISÃO</h2>
+<h2>Por Que Muitas Pessoas Não Evoluem Treinando Sozinhas?</h2>
 
 <p>
-Você pode continuar treinando sozinho…<br>
-Ou pode treinar com estratégia.
+Sem avaliação física, planejamento estruturado e ajustes
+no treinamento, a evolução tende a estagnar.
+Treinar exige estratégia, progressão e orientação técnica.
+</p>
+
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+
+<h2>Estrutura Estratégica de Treinamento</h2>
+
+<div class="card">
+
+<ul>
+
+<li><b>Avaliação Física Inicial</b></li>
+
+<li><b>Planejamento de Treino Estruturado</b></li>
+
+<li><b>Ajustes Contínuos de Evolução</b></li>
+
+<li><b>Execução Técnica dos Exercícios</b></li>
+
+</ul>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+
+<h2>Resultados Consistentes São Construídos com Método</h2>
+
+<div class="stats">
+
+<div class="stat">
+100+
+<span>Treinos planejados</span>
+</div>
+
+<div class="stat">
+5+
+<span>Anos de estudo</span>
+</div>
+
+<div class="stat">
+100%
+<span>Treino personalizado</span>
+</div>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+
+<h2>Sobre o Profissional</h2>
+
+<p>
+
+<strong>Alessandro Ferreira</strong><br><br>
+
+Bacharel em Educação Física com atuação em
+treinamento físico, evolução corporal
+e planejamento estratégico de exercícios.
+
+</p>
+
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+
+<h2>Seu Próximo Nível Começa Agora</h2>
+
+<p>
+
+Treinar com estratégia muda completamente
+a forma como o corpo evolui.
+
 </p>
 
 <a class="btn" href="https://alespy80.github.io/evo360-diagnostico/">
-Solicitar Avaliação Estratégica
+Agendar Avaliação Física
 </a>
 
 </section>
 
 <footer>
 
-<p><b>ALESSANDRO FERREIRA</b></p>
+<p><strong>Alessandro Ferreira</strong></p>
 
 <p>Personal Trainer | Bacharel em Educação Física</p>
 
-<p style="color:#00ff88;font-size:20px">
-Agendar Avaliação Estratégica Agora<br>
+<p style="color:#00ff88;font-size:20px;margin-top:15px">
 📲 (21) 97925-9432
 </p>
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5521979259432">🎯</a>
+<a class="whatsapp" href="https://wa.me/5521979259432">💬</a>
+
+<script>
+
+/* ANIMAÇÃO AO ROLAR */
+
+const sections = document.querySelectorAll('.section')
+
+window.addEventListener('scroll', () =>{
+
+sections.forEach(section=>{
+
+const top = section.getBoundingClientRect().top
+
+if(top < window.innerHeight - 100){
+
+section.classList.add('show')
+
+}
+
+})
+
+})
+
+</script>
 
 </body>
-  </html>
+</html>
