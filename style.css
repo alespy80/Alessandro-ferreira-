@@ -142,6 +142,8 @@ nav{
   font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   text-decoration:none;border:1px solid var(--borda);
   transition:all .25s;
+  font-family:'Inter',system-ui,sans-serif;
+  cursor:pointer;
 }
 .btn-sec:hover{border-color:var(--azul);color:var(--branco)}
 
@@ -324,13 +326,13 @@ footer p{font-size:.78rem;color:var(--muted);margin-bottom:1.25rem}
 /* ══ OVERLAY PERFIL ══ */
 .perfil-overlay {
   position: fixed; inset: 0; z-index: 500;
-  background: rgba(4,4,14,.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: flex; align-items: center; justify-content: center;
-  padding: 1.5rem;
+  background: rgba(4,4,14,.95);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
   opacity: 0; pointer-events: none;
   transition: opacity .3s ease;
+  -webkit-overflow-scrolling: touch;
 }
 .perfil-overlay.aberto {
   opacity: 1; pointer-events: all;
@@ -340,14 +342,14 @@ footer p{font-size:.78rem;color:var(--muted);margin-bottom:1.25rem}
   background: var(--card);
   border: 1px solid rgba(14,165,233,.2);
   border-radius: 20px;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 1.5rem;
   max-width: 480px; width: 100%;
-  max-height: 90vh; overflow-y: auto;
   position: relative;
   box-shadow: 0 0 80px rgba(14,165,233,.15);
   transform: translateY(20px);
   transition: transform .3s ease;
   text-align: center;
+  margin: auto;
 }
 .perfil-overlay.aberto .perfil-modal {
   transform: translateY(0);
