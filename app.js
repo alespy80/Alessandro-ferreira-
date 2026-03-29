@@ -60,14 +60,26 @@ document.querySelectorAll(".metodo-grid, .stats-grid, .problema-grid").forEach(e
 
 // ── OVERLAY PERFIL ──
 function abrirPerfil() {
-  document.getElementById("perfil-overlay").classList.add("aberto");
-  document.body.style.overflow = "hidden";
+  const overlay = document.getElementById("perfil-overlay");
+  overlay.classList.add("aberto");
+  // iOS fix: salvar posição e travar scroll
+  const scrollY = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = "100%";
+  overlay._scrollY = scrollY;
 }
 
 function fecharPerfil(forcar) {
   if (forcar === true || forcar?.target?.id === "perfil-overlay") {
-    document.getElementById("perfil-overlay").classList.remove("aberto");
-    document.body.style.overflow = "";
+    const overlay = document.getElementById("perfil-overlay");
+    overlay.classList.remove("aberto");
+    // Restaurar scroll
+    const scrollY = overlay._scrollY || 0;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, scrollY);
   }
 }
 
