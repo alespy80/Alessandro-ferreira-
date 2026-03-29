@@ -1,405 +1,226 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Consultoria Estratégica | Alessandro Ferreira</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial, Helvetica, sans-serif;
-background:#020617;
-color:white;
-overflow-x:hidden;
-}
-
-/* FUNDO NEON */
-
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 30%,#00e5ff33,transparent),
-radial-gradient(circle at 80% 70%,#0066ff33,transparent);
-filter:blur(120px);
-z-index:-1;
-}
-
-/* MENU */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px;
-display:flex;
-justify-content:center;
-background:rgba(0,0,0,0.2);
-backdrop-filter:blur(10px);
-z-index:10;
-}
-
-nav span{
-color:#00e5ff;
-font-weight:bold;
-font-size:18px;
-letter-spacing:1px;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-}
-
-.hero h1{
-font-size:48px;
-color:#00e5ff;
-margin-bottom:20px;
-max-width:900px;
-line-height:1.2;
-}
-
-.hero p{
-font-size:20px;
-max-width:650px;
-line-height:1.6;
-opacity:0.9;
-}
-
-/* BOTÃO */
-
-.btn{
-display:inline-block;
-margin-top:35px;
-padding:18px 36px;
-border-radius:40px;
-background:linear-gradient(45deg,#0066ff,#00e5ff);
-color:white;
-font-size:20px;
-text-decoration:none;
-box-shadow:0 0 25px #00e5ff;
-font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 60px #00e5ff;
-}
-
-/* SEÇÕES */
-
-.section{
-max-width:900px;
-margin:auto;
-padding:90px 20px;
-text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.section h2{
-color:#00e5ff;
-margin-bottom:20px;
-font-size:32px;
-}
-
-.section p{
-font-size:18px;
-line-height:1.7;
-opacity:0.9;
-}
-
-/* CARDS */
-
-.card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(15px);
-border-radius:20px;
-padding:35px;
-margin-top:40px;
-max-width:520px;
-margin-left:auto;
-margin-right:auto;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 50px rgba(0,229,255,0.25);
-}
-
-/* LISTAS */
-
-ul{
-text-align:left;
-max-width:520px;
-margin:30px auto;
-font-size:18px;
-line-height:1.8;
-list-style:none;
-}
-
-ul li{
-margin-bottom:14px;
-}
-
-ul li::before{
-content:"✔ ";
-color:#00e5ff;
-font-weight:bold;
-}
-
-/* INDICADORES */
-
-.stats{
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.stat{
-font-size:34px;
-font-weight:bold;
-color:#00e5ff;
-}
-
-.stat span{
-display:block;
-font-size:16px;
-color:white;
-margin-top:5px;
-}
-
-/* DIVISOR */
-
-.divider{
-height:2px;
-background:#00e5ff;
-opacity:0.25;
-margin:80px auto;
-width:60%;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25d366;
-color:white;
-font-size:26px;
-padding:16px 18px;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 0 25px #25d366;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:70px 20px;
-font-size:16px;
-}
-
-footer strong{
-color:#00e5ff;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alessandro Ferreira | Personal Trainer Estratégico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<nav>
-<span>Alessandro Ferreira | Personal Trainer</span>
-</nav>
-
-<section class="hero">
-
-<h1>Treinamento Estratégico para Evolução Física Real</h1>
-
-<p>
-Consultoria personalizada focada em saúde,
-condicionamento físico e evolução corporal.
-</p>
-
-<a class="btn" href="https://alespy80.github.io/evo360-diagnostico/">
-Solicitar Avaliação Física
-</a>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>Por Que Muitas Pessoas Não Evoluem Treinando Sozinhas?</h2>
-
-<p>
-Sem avaliação física, planejamento estruturado e ajustes
-no treinamento, a evolução tende a estagnar.
-Treinar exige estratégia, progressão e orientação técnica.
-</p>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>Estrutura Estratégica de Treinamento</h2>
-
-<div class="card">
-
-<ul>
-
-<li><b>Avaliação Física Inicial</b></li>
-
-<li><b>Planejamento de Treino Estruturado</b></li>
-
-<li><b>Ajustes Contínuos de Evolução</b></li>
-
-<li><b>Execução Técnica dos Exercícios</b></li>
-
-</ul>
-
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>Resultados Consistentes São Construídos com Método</h2>
-
-<div class="stats">
-
-<div class="stat">
-100+
-<span>Treinos planejados</span>
-</div>
-
-<div class="stat">
-10+
-<span>Anos de estudo</span>
-</div>
-
-<div class="stat">
-100%
-<span>Treino personalizado</span>
-</div>
-
-</div>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>Sobre o Profissional</h2>
-
-<p>
-
-<strong>Alessandro Ferreira</strong><br><br>
-
-Bacharel em Educação Física com atuação em
-treinamento físico, evolução corporal
-e planejamento estratégico de exercícios.
-
-</p>
-
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-
-<h2>Seu Próximo Nível Começa Agora</h2>
-
-<p>
-
-Treinar com estratégia muda completamente
-a forma como o corpo evolui.
-
-</p>
-
-<a class="btn" href="https://alespy80.github.io/evo360-diagnostico/">
-Agendar Avaliação Física
-</a>
-
-</section>
-
-<footer>
-
-<p><strong>Alessandro Ferreira</strong></p>
-
-<p>Personal Trainer | Bacharel em Educação Física</p>
-
-<p style="color:#00ff88;font-size:20px;margin-top:15px">
-📲 (21) 97925-9432
-</p>
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/5521979259432">💬</a>
-
-<script>
-
-/* ANIMAÇÃO AO ROLAR */
-
-const sections = document.querySelectorAll('.section')
-
-window.addEventListener('scroll', () =>{
-
-sections.forEach(section=>{
-
-const top = section.getBoundingClientRect().top
-
-if(top < window.innerHeight - 100){
-
-section.classList.add('show')
-
-}
-
-})
-
-})
-
-</script>
-
+  <!-- FUNDO -->
+  <div class="bg-glow"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="brand-nome">Alessandro</span>
+        <span class="brand-titulo">Personal Trainer</span>
+      </div>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#metodo">Método</a>
+        <a href="#resultados">Resultados</a>
+        <a href="https://alespy80.github.io/evo360-diagnostico/" class="nav-cta">Avaliação Gratuita</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#sobre">Sobre</a>
+      <a href="#metodo">Método</a>
+      <a href="#resultados">Resultados</a>
+      <a href="https://alespy80.github.io/evo360-diagnostico/">Avaliação Gratuita</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="dot"></span> CONSULTORIA ESTRATÉGICA</div>
+      <h1 class="hero-titulo">
+        Treinamento<br>
+        <span>Estratégico</span><br>
+        para Evolução<br>Real.
+      </h1>
+      <p class="hero-sub">Consultoria personalizada focada em saúde, condicionamento físico e evolução corporal com método e ciência.</p>
+      <div class="hero-btns">
+        <a href="https://alespy80.github.io/evo360-diagnostico/" class="btn-prim">
+          Solicitar Avaliação Física
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#metodo" class="btn-sec">Conhecer o método</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num">100<span>+</span></div><div class="hstat-label">Treinos planejados</div></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><div class="hstat-num">10<span>+</span></div><div class="hstat-label">Anos de estudo</div></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><div class="hstat-num">100<span>%</span></div><div class="hstat-label">Personalizado</div></div>
+      </div>
+    </div>
+    <div class="hero-scroll">role para baixo</div>
+  </section>
+
+  <!-- POR QUE NÃO EVOLUEM -->
+  <section class="secao reveal" id="problema">
+    <div class="container">
+      <div class="sec-label">O Problema</div>
+      <h2 class="sec-titulo">Por que muitas pessoas não evoluem treinando sozinhas?</h2>
+      <p class="sec-texto">Sem avaliação física, planejamento estruturado e ajustes no treinamento, a evolução tende a estagnar. Treinar exige <strong>estratégia, progressão e orientação técnica</strong>.</p>
+      <div class="problema-grid">
+        <div class="prob-item">
+          <div class="prob-icone">❌</div>
+          <div class="prob-texto">Treinos genéricos sem progressão</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-icone">❌</div>
+          <div class="prob-texto">Foco em quantidade, não em qualidade</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-icone">❌</div>
+          <div class="prob-texto">Sem avaliação física inicial</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-icone">❌</div>
+          <div class="prob-texto">Execução técnica incorreta</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="secao secao-dark reveal" id="metodo">
+    <div class="container">
+      <div class="sec-label">A Solução</div>
+      <h2 class="sec-titulo">Estrutura Estratégica de Treinamento</h2>
+      <p class="sec-texto">Cada etapa foi pensada para gerar evolução real, consistente e mensurável.</p>
+      <div class="metodo-grid">
+        <div class="metodo-item">
+          <div class="metodo-num">01</div>
+          <div class="metodo-icone">📋</div>
+          <h3>Avaliação Física Inicial</h3>
+          <p>Diagnóstico completo do seu perfil corporal, histórico e objetivos para montar a estratégia ideal.</p>
+        </div>
+        <div class="metodo-item">
+          <div class="metodo-num">02</div>
+          <div class="metodo-icone">🗂️</div>
+          <h3>Planejamento Estruturado</h3>
+          <p>Treino periodizado e individualizado, com progressão de carga e volume calculados.</p>
+        </div>
+        <div class="metodo-item">
+          <div class="metodo-num">03</div>
+          <div class="metodo-icone">⚡</div>
+          <h3>Execução Técnica</h3>
+          <p>Correção de movimento e ativação muscular correta para maximizar cada repetição.</p>
+        </div>
+        <div class="metodo-item">
+          <div class="metodo-num">04</div>
+          <div class="metodo-icone">📈</div>
+          <h3>Ajustes Contínuos</h3>
+          <p>Monitoramento constante e ajustes estratégicos para manter a evolução sempre ativa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="secao reveal" id="resultados">
+    <div class="container">
+      <div class="sec-label">Números</div>
+      <h2 class="sec-titulo">Resultados consistentes são construídos com método</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">100<span>+</span></div>
+          <div class="stat-label">Treinos planejados</div>
+          <div class="stat-desc">Cada treino estruturado com objetivo claro e progressão definida.</div>
+        </div>
+        <div class="stat-card stat-dest">
+          <div class="stat-num">10<span>+</span></div>
+          <div class="stat-label">Anos de estudo</div>
+          <div class="stat-desc">Formação sólida em Educação Física e atualização constante.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-label">Personalizado</div>
+          <div class="stat-desc">Nenhum treino igual. Cada aluno tem sua estratégia única.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="secao secao-dark reveal" id="sobre">
+    <div class="container container-sobre">
+      <div class="sobre-texto">
+        <div class="sec-label">O Profissional</div>
+        <h2 class="sec-titulo">Alessandro Ferreira</h2>
+        <p class="sec-texto">Bacharel em Educação Física, Tecnólogo em Gestão de Tecnologia da Informação e especialista em Massagem Terapêutica. Atuação em treinamento físico, evolução corporal, planejamento estratégico de exercícios e recuperação muscular.</p>
+        <ul class="sobre-lista">
+          <li>Bacharel em Educação Física</li>
+          <li>Tecnólogo em Gestão de Tecnologia da Informação</li>
+          <li>Especialista em Massagem Terapêutica</li>
+          <li>Especialista em treinamento estratégico</li>
+          <li>Método EVO 360 — evolução baseada em ciência</li>
+          <li>Atendimento presencial e online</li>
+        </ul>
+        <div class="sobre-contato">
+          <a href="https://wa.me/5521979259432" class="btn-prim" target="_blank" rel="noopener">
+            💬 (21) 97925-9432
+          </a>
+          <a href="https://alespy80.github.io/Alessandro-ferreira-/" class="btn-sec" target="_blank" rel="noopener">
+            Ver perfil completo
+          </a>
+        </div>
+      </div>
+      <div class="sobre-card">
+        <div class="sobre-card-inner">
+          <div class="sc-icone">🏋️</div>
+          <div class="sc-titulo">Método EVO 360</div>
+          <div class="sc-desc">Evolução física baseada em ativação neuromuscular, controle de execução e progressão estratégica.</div>
+          <a href="https://alespy80.github.io/Evo/" class="sc-link" target="_blank" rel="noopener">Conhecer o método →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="secao cta-final reveal">
+    <div class="container container-center">
+      <div class="sec-label">Próximo Passo</div>
+      <h2 class="sec-titulo cta-titulo">Seu próximo nível<br>começa agora.</h2>
+      <p class="sec-texto">Treinar com estratégia muda completamente a forma como o corpo evolui.</p>
+      <a href="https://alespy80.github.io/evo360-diagnostico/" class="btn-prim btn-grande">
+        Agendar Avaliação Física
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-nome">Alessandro <span>Ferreira</span></div>
+      <p>Personal Trainer · Gestão de TI · Massagem Terapêutica</p>
+      <div class="footer-links">
+        <a href="https://alespy80.github.io/Alessandro-ferreira-/">Site principal</a>
+        <a href="https://alespy80.github.io/Evo/">Método EVO</a>
+        <a href="https://alespy80.github.io/evo360-diagnostico/">Diagnóstico</a>
+        <a href="https://wa.me/5521979259432">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a class="whatsapp-float" href="https://wa.me/5521979259432" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="app.js"></script>
 </body>
 </html>
