@@ -24,9 +24,14 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
 
 reveals.forEach(el => observer.observe(el));
+
+// Fallback: mostrar tudo após 1.5s caso o observer não dispare
+setTimeout(() => {
+  reveals.forEach(el => el.classList.add("show"));
+}, 1500);
 
 // ── ANIMAÇÃO STAGGER NOS CARDS ──
 const cardObserver = new IntersectionObserver(entries => {
@@ -47,8 +52,26 @@ const cardObserver = new IntersectionObserver(entries => {
       cardObserver.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.05 });
 
 document.querySelectorAll(".metodo-grid, .stats-grid, .problema-grid").forEach(el => {
   cardObserver.observe(el);
+});
+
+// ── OVERLAY PERFIL ──
+function abrirPerfil() {
+  document.getElementById("perfil-overlay").classList.add("aberto");
+  document.body.style.overflow = "hidden";
+}
+
+function fecharPerfil(forcar) {
+  if (forcar === true || forcar?.target?.id === "perfil-overlay") {
+    document.getElementById("perfil-overlay").classList.remove("aberto");
+    document.body.style.overflow = "";
+  }
+}
+
+// Fechar com ESC
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") fecharPerfil(true);
 });
